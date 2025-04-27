@@ -50,14 +50,12 @@ Activate the virtual environment:
 # On Windows
 venv\Scripts\activate
 
-
 ---
 
 ### 3. Install Required Packages
 
 ```bash
 pip install Flask SQLAlchemy
-```
 
 ---
 
@@ -87,8 +85,6 @@ Activate the virtual environment (if not already activated):
 # Windows
 venv\Scripts\activate
 
-# Mac/Linux
-source venv/bin/activate
 ```
 
 Run the application:
@@ -171,6 +167,3 @@ pip install -r requirements.txt
 
 ---
 
-## 🎉 Congratulations!
-
-Your AI Safety Incident Log backend project is ready and running!
