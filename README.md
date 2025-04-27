@@ -1,6 +1,6 @@
 # AI Safety Incident Log API
 
-A simple RESTful API service to log and manage AI safety incidents, built for the HumanChain Backend Intern Assignment.
+A simple RESTful API service to log and manage AI safety incidents, built using Flask and SQLAlchemy.
 
 ---
 
@@ -15,79 +15,110 @@ This backend service allows users to:
 It uses:
 - **Language**: Python
 - **Framework**: Flask
-- **Database**: SQLite (via SQLAlchemy ORM)
+- **Database**: SQLite (via SQLAlchemy)
 
 ---
 
 ## 📦 Installation & Setup
 
-### 1. Clone the Repository
+### 1. Prerequisites
+
+- Python 3.8+
+- pip (Python package manager)
+
+Check if installed:
 
 ```bash
-git clone <your-repo-link>
-cd ai_safety_backend
+python --version
+pip --version
 ```
 
-### 2. Set Up Virtual Environment
+If Python is not installed, download it from:  
+https://www.python.org/downloads/
+
+---
+
+### 2. Project Setup
+
+Create a new folder and set up a virtual environment:
 
 ```bash
-# Create a virtual environment
+mkdir ai_safety_backend
+cd ai_safety_backend
 python -m venv venv
+```
 
-# Activate the virtual environment
+Activate the virtual environment:
+
+```bash
 # On Windows
 venv\Scripts\activate
+
 # On Mac/Linux
 source venv/bin/activate
 ```
 
-### 3. Install Dependencies
+---
+
+### 3. Install Required Packages
 
 ```bash
-pip install -r requirements.txt
+pip install Flask SQLAlchemy
 ```
 
-### 4. Database Setup
+---
 
-Database (`database.db`) is auto-created when you first run the app.
-It uses the `Incident` model defined in `models.py`.
+### 4. Create Project Files
 
-To manually create the database:
+Create the following files:
+
+- `app.py`
+- `models.py`
+- `requirements.txt`
+
+`database.db` will be auto-created when the server runs.
+
+To create empty files quickly:
 
 ```bash
-python
->>> from app import db
->>> db.create_all()
->>> exit()
+touch app.py models.py requirements.txt
 ```
-
-✅ **Optional**: Pre-populate the database with 2-3 sample incidents by running POST API calls (examples below).
 
 ---
 
 ## 🚀 Running the Server
 
-Make sure the virtual environment is activated, then:
+Activate the virtual environment (if not already activated):
+
+```bash
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
+```
+
+Run the application:
 
 ```bash
 python app.py
 ```
 
-Server will start at:  
+Server will be available at:  
 ➡️ `http://127.0.0.1:5000/`
 
 ---
 
 ## 🔥 API Endpoints
 
-All responses and requests use **JSON**.
+All API requests and responses use **JSON** format.
 
 ---
 
 ### 1. Get All Incidents
 
-- **Endpoint**: `GET /incidents`
-- **Description**: Retrieves all incidents.
+- **Method**: GET
+- **URL**: `/incidents`
 
 ```bash
 curl http://127.0.0.1:5000/incidents
@@ -97,8 +128,8 @@ curl http://127.0.0.1:5000/incidents
 
 ### 2. Create a New Incident
 
-- **Endpoint**: `POST /incidents`
-- **Description**: Log a new AI safety incident.
+- **Method**: POST
+- **URL**: `/incidents`
 
 ```bash
 curl -X POST http://127.0.0.1:5000/incidents \
@@ -106,14 +137,12 @@ curl -X POST http://127.0.0.1:5000/incidents \
   -d '{"title":"Test Incident","description":"Something went wrong","severity":"Medium"}'
 ```
 
-✅ Valid severity values: `Low`, `Medium`, `High`
-
 ---
 
 ### 3. Get Incident by ID
 
-- **Endpoint**: `GET /incidents/<id>`
-- **Description**: Retrieve a specific incident.
+- **Method**: GET
+- **URL**: `/incidents/<id>`
 
 ```bash
 curl http://127.0.0.1:5000/incidents/1
@@ -123,33 +152,12 @@ curl http://127.0.0.1:5000/incidents/1
 
 ### 4. Delete Incident by ID
 
-- **Endpoint**: `DELETE /incidents/<id>`
-- **Description**: Delete an incident.
+- **Method**: DELETE
+- **URL**: `/incidents/<id>`
 
 ```bash
 curl -X DELETE http://127.0.0.1:5000/incidents/1
 ```
-
----
-
-## ⚙️ Environment Variables
-
-No external environment variables are required for this basic version.  
-The database is configured as:
-
-```python
-sqlite:///database.db
-```
-
-If needed, you can modify `app.config['SQLALCHEMY_DATABASE_URI']` in `app.py`.
-
----
-
-## 🛠️ Design Decisions
-
-- **Flask** was chosen for its simplicity and lightweight setup.
-- **SQLite** was selected to avoid extra installation overhead.
-- The API is fully RESTful and returns appropriate status codes (e.g., `201`, `400`, `404`, `200`).
 
 ---
 
@@ -172,4 +180,4 @@ pip install -r requirements.txt
 
 ## 🎉 Congratulations!
 
-You are now ready to interact with the AI Safety Incident Log API!
+Your AI Safety Incident Log backend project is ready and running!
