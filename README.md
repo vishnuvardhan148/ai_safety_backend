@@ -47,7 +47,6 @@ python -m venv venv
 Activate the virtual environment:
 
 ```bash
-# On Windows
 venv\Scripts\activate
 
 ---
@@ -82,7 +81,6 @@ touch app.py models.py requirements.txt
 Activate the virtual environment (if not already activated):
 
 ```bash
-# Windows
 venv\Scripts\activate
 
 ```
