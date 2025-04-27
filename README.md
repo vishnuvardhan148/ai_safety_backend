@@ -33,10 +33,6 @@ python --version
 pip --version
 ```
 
-If Python is not installed, download it from:  
-https://www.python.org/downloads/
-
----
 
 ### 2. Project Setup
 
