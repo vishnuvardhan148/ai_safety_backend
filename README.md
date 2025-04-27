@@ -50,9 +50,6 @@ Activate the virtual environment:
 # On Windows
 venv\Scripts\activate
 
-# On Mac/Linux
-source venv/bin/activate
-```
 
 ---
 
