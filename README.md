@@ -1,69 +1,34 @@
-HumanChain AI Safety Incident Log API
-📋 Project Description
-This is a simple backend service built with Flask and SQLite to log and manage hypothetical AI safety incidents for HumanChain.
+# AI Safety Log Backend
 
-⚙️ Tech Stack
-Language: Python
+This is a backend application built to track AI safety incidents. Using **Flask** and **SQLAlchemy**, this API provides endpoints to create, retrieve, and delete incidents related to AI safety concerns. It helps monitor and manage AI systems by logging incidents with various severity levels.
 
-Framework: Flask
+---
 
-Database: SQLite
+## Table of Contents
 
-ORM: SQLAlchemy
+1. [Prerequisites](#prerequisites)
+2. [Setup](#setup)
+   - [Clone the Repository](#1-clone-the-repository)
+   - [Set Up Virtual Environment](#2-set-up-virtual-environment)
+   - [Install Dependencies](#3-install-dependencies)
+3. [Usage](#usage)
+   - [Run the Backend Server](#1-run-the-backend-server)
+   - [API Endpoints](#2-api-endpoints)
+4. [File Structure](#file-structure)
+5. [Dependencies](#dependencies)
+6. [License](#license)
 
-🚀 How to Run Locally
-Clone or download the project folder.
+---
 
-Create and activate a virtual environment:
+## Prerequisites
 
-bash
-Copy
-Edit
-python -m venv venv
-venv\Scripts\activate    # Windows
-# or
-source venv/bin/activate  # Mac/Linux
-Install the dependencies:
+Before you begin, ensure you have the following installed:
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the application:
+- **Python** (version 3.8+)
+- **pip** (Python package manager)
 
-bash
-Copy
-Edit
-python app.py
-The app will be running at:
-http://127.0.0.1:5000/
+To check if Python and pip are installed:
 
-🗂️ API Endpoints
-1. GET /incidents
-Retrieve all incidents.
-
-bash
-Copy
-Edit
-curl http://127.0.0.1:5000/incidents
-2. POST /incidents
-Create a new incident.
-
-bash
-Copy
-Edit
-curl -X POST http://127.0.0.1:5000/incidents -H "Content-Type: application/json" -d "{\"title\":\"Sample Incident\",\"description\":\"Example Description\",\"severity\":\"High\"}"
-3. GET /incidents/{id}
-Retrieve a specific incident by ID.
-
-bash
-Copy
-Edit
-curl http://127.0.0.1:5000/incidents/1
-4. DELETE /incidents/{id}
-Delete an incident by ID.
-
-bash
-Copy
-Edit
-curl -X DELETE http://127.0.0.1:5000/incidents/1
+```bash
+python --version
+pip --version
